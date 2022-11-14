@@ -2,6 +2,7 @@
 import sys
 import time
 import urllib3
+import json
 
 from src.apps.Jenkins.Infrastructure.ServerJenkinsRepository import ServerJenkinsRepository
 from src.apps.Jenkins.Application.Build.JobBuilder import JobBuilder
@@ -25,8 +26,8 @@ JENKINS_JOB_PARAMS = sys.argv[5] if len(sys.argv) >= 5 else '{}'
 JENKINS_WAIT_JOB = sys.argv[6] if len(sys.argv) >= 6 else "wait"
 JENKINS_SSL_VERIFY = (sys.argv[7] == 'true') if len(sys.argv) >= 7 else true
 GITHUB_PR_NUMBER = sys.argv[8] if len(sys.argv) >= 8 else '{}'
-print(JENKINS_JOB_PARAMS)
-print(GITHUB_PR_NUMBER)
+
+JENKINS_JOB_PARAMS = '{"GITHUB_PR_NUMBER"="200"}'
 
 if not JENKINS_SSL_VERIFY:
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)

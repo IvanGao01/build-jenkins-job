@@ -25,7 +25,11 @@ inputs:
   jenkins-ssl-verify: 
     description: "Verify SSL certificate"
     required: false
-    default: true   
+    default: true 
+  github-pr-number:
+    description: "Pull request number"
+    required: false
+    default: ''
 outputs:
   job_build_number:
     description: 'buildnumber of the triggered job'
