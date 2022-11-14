@@ -27,7 +27,7 @@ JENKINS_WAIT_JOB = sys.argv[6] if len(sys.argv) >= 6 else "wait"
 JENKINS_SSL_VERIFY = (sys.argv[7] == 'true') if len(sys.argv) >= 7 else true
 GITHUB_PR_NUMBER = sys.argv[8] if len(sys.argv) >= 8 else '{}'
 
-JENKINS_JOB_PARAMS = '{"GITHUB_PR_NUMBER"="200"}'
+JENKINS_JOB_PARAMS = '{"GITHUB_PR_NUMBER": "200"}'
 
 if not JENKINS_SSL_VERIFY:
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
