@@ -41,7 +41,8 @@ runs:
     - ${{ inputs.jenkins-job }}
     - ${{ inputs.jenkins-job-params}}
     - ${{ inputs.jenkins-wait-job }}
-    - ${{ inputs.jenkins-ssl-verify }}    
+    - ${{ inputs.jenkins-ssl-verify }}
+    - ${{ inputs.github-pr-number}}
 branding:
   icon: 'arrow-up-right'
   color: 'yellow'
